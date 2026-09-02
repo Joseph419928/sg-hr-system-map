@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="新誥人事系統互動式功能地圖，包含功能說明、資料流、角色與最近 Git Commit。">
+  <title>新誥人事系統｜互動系統地圖</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳到主要內容</a>
+
+  <header class="site-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">SG</div>
+      <div>
+        <p class="eyebrow">SG HR SYSTEM ATLAS</p>
+        <h1>新誥人事系統地圖</h1>
+        <p class="subtitle">把複雜的人事系統，畫成一座每個人都看得懂的城市。</p>
+      </div>
+    </div>
+    <div class="snapshot-card" aria-label="盤點快照">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <div>
+        <b id="snapshotCommit">最新 Commit 14:44</b>
+        <span id="snapshotDate">2026-08-28 · Asia/Taipei</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="page-tabs" aria-label="網站主要分頁">
+    <button class="page-tab is-active" type="button" data-page="map" aria-pressed="true">城市地圖</button>
+    <button class="page-tab" type="button" data-page="flow" aria-pressed="false">工作流程</button>
+    <button class="page-tab" type="button" data-page="timeline" aria-pressed="false">改動時間線</button>
+    <button class="page-tab" type="button" data-page="architecture" aria-pressed="false">系統地下室</button>
+  </nav>
+
+  <main id="mainContent">
+    <section class="hero-dashboard" aria-labelledby="dashboardTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">SYSTEM OVERVIEW</p>
+        <h2 id="dashboardTitle">今天要從哪一區開始認識？</h2>
+        <p>先看生活化故事，再逐層打開正式功能、資料流、程式檔案與最近 Commit。</p>
+      </div>
+      <div class="metrics" id="metrics" aria-label="系統統計"></div>
+    </section>
+
+    <section class="control-deck" aria-label="地圖顯示控制">
+      <label class="search-box">
+        <span>搜尋功能</span>
+        <span class="search-input-wrap">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="例如：打卡、薪資、同意書、權限">
+        </span>
+      </label>
+      <label>
+        <span>城市區域</span>
+        <select id="districtFilter">
+          <option value="all">全部區域</option>
+        </select>
+      </label>
+      <fieldset class="mode-switch">
+        <legend>解說深度</legend>
+        <button type="button" data-mode="kid" aria-pressed="true">小學生</button>
+        <button type="button" data-mode="manager" aria-pressed="false">主管</button>
+        <button type="button" data-mode="engineer" aria-pressed="false">工程</button>
+      </fieldset>
+    </section>
+
+    <div class="status-strip" id="statusStrip" role="status" aria-live="polite"></div>
+
+    <section class="page-view is-active" id="page-map" aria-labelledby="mapHeading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">INTERACTIVE CITY MAP</p>
+          <h2 id="mapHeading">功能城市</h2>
+        </div>
+        <p>點一棟建築，查看裡面的功能房間與最近施工紀錄。</p>
+      </div>
+      <div class="map-layout">
+        <div class="city-map" id="cityMap"></div>
+        <aside class="detail-panel" id="moduleDetail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section class="page-view" id="page-flow" aria-labelledby="flowHeading" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HOW WORK MOVES</p>
+          <h2 id="flowHeading">四條主要工作旅程</h2>
+        </div>
+        <p>跟著箭頭，看一件工作如何從開始走到完成。</p>
+      </div>
+      <div class="journey-picker" id="journeyPicker"></div>
+      <div class="journey-stage" id="journeyStage" aria-live="polite"></div>
+    </section>
+
+    <section class="page-view" id="page-timeline" aria-labelledby="timelineHeading" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RECENT CHANGE HISTORY</p>
+          <h2 id="timelineHeading">改動時間線</h2>
+        </div>
+        <p>時間以台北時區顯示；同一筆 Commit 可能同時改善多個功能。</p>
+      </div>
+      <div class="timeline-toolbar">
+        <label>
+          <span>時間線範圍</span>
+          <select id="timelineFilter">
+            <option value="all">全部近期紀錄</option>
+            <option value="daily">日常人事</option>
+            <option value="payroll">每月薪資</option>
+            <option value="self">員工自助</option>
+            <option value="admin">系統管理</option>
+            <option value="platform">共用底層</option>
+          </select>
+        </label>
+        <p id="timelineCount"></p>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="page-view" id="page-architecture" aria-labelledby="architectureHeading" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BEHIND THE SCENES</p>
+          <h2 id="architectureHeading">系統地下室</h2>
+        </div>
+        <p>畫面下面還有守門員、郵差、倉庫和監視紀錄一起工作。</p>
+      </div>
+      <div class="architecture-stack" id="architectureStack"></div>
+      <div class="platform-grid" id="platformGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>本網站是程式碼與 Git 歷史的靜態快照，不包含員工個資。</p>
+    <p>功能卡片的時間依相關程式檔案最近一次 Commit 自動更新；功能說明仍由人工確認。</p>
+  </footer>
+
+  <script src="commit-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
