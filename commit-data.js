@@ -1,11 +1,11 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
-  "generatedAt": "2026-09-02T13:45:56.306Z",
+  "generatedAt": "2026-10-02T11:11:27.755Z",
   "latestRepositoryCommit": {
-    "hash": "2feb255",
-    "date": "2026-09-02 21:45",
-    "short": "09/02 21:45",
-    "timestamp": 1788356724000
+    "hash": "182c680",
+    "date": "2026-10-02 19:11",
+    "short": "10/02 19:11",
+    "timestamp": 1790939471000
   },
   "files": {
     ".github/workflows": {
@@ -57,10 +57,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786091619000
     },
     "server.js": {
-      "hash": "cae8a7f",
-      "date": "2026-09-02 19:47",
-      "short": "09/02 19:47",
-      "timestamp": 1788349650000
+      "hash": "182c680",
+      "date": "2026-10-02 19:11",
+      "short": "10/02 19:11",
+      "timestamp": 1790939471000
     },
     "store.js": {
       "hash": "9c679e0",
@@ -69,10 +69,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786762829000
     },
     "test/*": {
-      "hash": "cae8a7f",
-      "date": "2026-09-02 19:47",
-      "short": "09/02 19:47",
-      "timestamp": 1788349650000
+      "hash": "182c680",
+      "date": "2026-10-02 19:11",
+      "short": "10/02 19:11",
+      "timestamp": 1790939471000
     },
     "test/attendance-calc.js": {
       "hash": "02f1a14",
@@ -93,10 +93,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "cae8a7f",
-      "date": "2026-09-02 19:47",
-      "short": "09/02 19:47",
-      "timestamp": 1788349650000
+      "hash": "182c680",
+      "date": "2026-10-02 19:11",
+      "short": "10/02 19:11",
+      "timestamp": 1790939471000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
