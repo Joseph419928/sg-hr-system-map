@@ -1,17 +1,17 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "ffeea0f",
-    "date": "2026-10-07 19:32",
-    "short": "10/07 19:32",
-    "timestamp": 1791372741000
+    "hash": "954c542",
+    "date": "2026-10-07 20:01",
+    "short": "10/07 20:01",
+    "timestamp": 1791374497000
   },
   "files": {
     ".github/workflows": {
-      "hash": "ffeea0f",
-      "date": "2026-10-07 19:32",
-      "short": "10/07 19:32",
-      "timestamp": 1791372741000
+      "hash": "954c542",
+      "date": "2026-10-07 20:01",
+      "short": "10/07 20:01",
+      "timestamp": 1791374497000
     },
     "DEPLOY.md": {
       "hash": "9c679e0",
@@ -117,6 +117,17 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "954c542",
+      "date": "2026-10-07 20:01",
+      "short": "10/07 20:01",
+      "timestamp": 1791374497000,
+      "kind": "feat",
+      "scope": "docs",
+      "files": [
+        ".github/workflows"
+      ]
+    },
     {
       "hash": "ffeea0f",
       "date": "2026-10-07 19:32",
@@ -636,15 +647,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "test/*",
         "test/regression.js"
       ]
-    },
-    {
-      "hash": "5001a8d",
-      "date": "2026-08-14 23:14",
-      "short": "08/14 23:14",
-      "timestamp": 1786720451000,
-      "kind": "docs",
-      "scope": "",
-      "files": []
     }
   ]
 };

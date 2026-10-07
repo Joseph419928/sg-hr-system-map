@@ -19,11 +19,20 @@
         <p class="subtitle">把複雜的人事系統，畫成一座每個人都看得懂的城市。</p>
       </div>
     </div>
-    <div class="snapshot-card" aria-label="盤點快照">
-      <span class="pulse-dot" aria-hidden="true"></span>
-      <div>
-        <b id="snapshotCommit">最新 Commit 14:44</b>
-        <span id="snapshotDate">2026-08-28 · Asia/Taipei</span>
+    <div class="header-tools">
+      <div class="font-switch" role="group" aria-label="字體大小">
+        <span class="font-switch-label" aria-hidden="true">字級</span>
+        <button type="button" data-font-step="-1" aria-label="縮小字體">A−</button>
+        <button type="button" data-font-step="0" aria-label="恢復預設字體大小">A</button>
+        <button type="button" data-font-step="1" aria-label="放大字體">A+</button>
+        <output id="fontScaleValue" aria-live="polite">100%</output>
+      </div>
+      <div class="snapshot-card" aria-label="盤點快照">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <div>
+          <b id="snapshotCommit">最新 Commit 14:44</b>
+          <span id="snapshotDate">2026-08-28 · Asia/Taipei</span>
+        </div>
       </div>
     </div>
   </header>
@@ -64,6 +73,7 @@
         <button type="button" data-mode="kid" aria-pressed="true">小學生</button>
         <button type="button" data-mode="manager" aria-pressed="false">主管</button>
         <button type="button" data-mode="engineer" aria-pressed="false">工程</button>
+        <button type="button" data-mode="manual" aria-pressed="false">操作手冊</button>
       </fieldset>
     </section>
 
@@ -139,6 +149,7 @@
   </footer>
 
   <script src="commit-data.js"></script>
+  <script src="manual-data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

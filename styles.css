@@ -470,7 +470,45 @@ body[data-mode="kid"] .engineer-only,
 body[data-mode="manager"] .kid-copy,
 body[data-mode="manager"] .engineer-only,
 body[data-mode="engineer"] .kid-copy,
-body[data-mode="engineer"] .manager-copy { display: none !important; }
+body[data-mode="engineer"] .manager-copy,
+body[data-mode="manual"] .kid-copy,
+body[data-mode="manual"] .manager-copy,
+body[data-mode="manual"] .engineer-only { display: none !important; }
+
+/* 字體大小：以 html 根字級縮放，樣式表的文字尺寸全部是 rem，會跟著放大縮小。 */
+.header-tools { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+.font-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .86);
+}
+.font-switch-label { padding: 0 4px; color: var(--muted); font-size: .76rem; font-weight: 800; }
+.font-switch button {
+  min-width: 42px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 11px;
+  background: #eef2f8;
+  font-weight: 800;
+  cursor: pointer;
+}
+.font-switch button:hover:not(:disabled) { background: var(--brand-soft); color: var(--brand); }
+.font-switch button:disabled { opacity: .4; cursor: not-allowed; }
+.font-switch output { min-width: 3.4em; color: var(--muted); font-size: .76rem; font-variant-numeric: tabular-nums; text-align: center; }
+
+/* 操作手冊模式 */
+.manual-where { display: grid; gap: 6px; padding: 12px 14px; border-radius: 12px; background: var(--brand-soft); color: #2b3a72; font-size: .82rem; }
+.manual-where b { color: var(--ink); }
+.manual-steps { display: grid; gap: 6px; margin: 4px 0 8px; padding-left: 1.4em; color: #2f3d55; font-size: .84rem; }
+.manual-steps li { padding-left: 2px; }
+.manual-tips { margin: 6px 0 0; padding: 8px 10px; border-left: 3px solid #e19117; border-radius: 6px; background: var(--sun); color: #684800; font-size: .78rem; }
+.manual-tips p { margin: 0; }
+.manual-tips p + p { margin-top: 4px; }
+.manual-missing { margin: 0; color: var(--muted); font-size: .8rem; font-style: italic; }
 
 @media (max-width: 1100px) {
   .hero-dashboard { grid-template-columns: 1fr; }
@@ -486,6 +524,8 @@ body[data-mode="engineer"] .manager-copy { display: none !important; }
   .site-header, .page-tabs, main, footer { width: min(100% - 24px, 1440px); }
   .site-header { align-items: flex-start; padding-top: 20px; }
   .snapshot-card { display: none; }
+  .site-header { flex-wrap: wrap; }
+  .header-tools { justify-content: flex-start; }
   .brand-mark { width: 48px; height: 48px; border-radius: 15px; }
   .page-tabs { overflow-x: auto; }
   .page-tab { flex: 0 0 auto; padding-inline: 12px; }

@@ -49,6 +49,8 @@ const COMMITS = {
 };
 
 const AUTO_COMMIT_DATA = window.SYSTEM_MAP_COMMIT_DATA || { files: {} };
+// 操作手冊（manual-data.js）。以模組 id、功能名稱對應；缺的項目畫面上會明確標示「尚未撰寫」。
+const MANUAL = (window.SYSTEM_MAP_MANUAL && window.SYSTEM_MAP_MANUAL.modules) || {};
 
 function latestCommitForFiles(files, fallback) {
   const paths = (Array.isArray(files) ? files : String(files || "").split(/\s*·\s*/))
@@ -223,7 +225,7 @@ const MODULES = [
     ]
   },
   {
-    id: "mySalary", district: "self", name: "我的薪資", icon: "✉️", fn: "viewMySalary()",
+    id: "mySalary", district: "self", name: "薪資管理", icon: "✉️", fn: "viewMySalary()",
     kid: "只打開自己的薪資信封，不會看到別人的。",
     manager: "以本人專用 API 提供薪資結構與最近 24 期薪資單，前端唯讀且不經管理端整包資料。",
     roles: ["員工"], flow: ["GET /api/me", "伺服器計算本人薪資", "本人薪資與各期明細"], dependencies: ["薪資結構", "已完成薪資", "帳號綁定"],
@@ -274,7 +276,7 @@ const MODULES = [
     ]
   },
   {
-    id: "permissions", district: "admin", name: "帳號與權限", icon: "🔑", fn: "viewPermissions()",
+    id: "permissions", district: "admin", name: "帳號與稽核", icon: "🔑", fn: "viewPermissions()",
     kid: "每把鑰匙只能開允許的門。",
     manager: "管理帳號、模組矩陣、門店範圍、薪資檢視與編輯、密碼及封存 PIN。",
     roles: ["系統管理員", "負責人"], flow: ["帳號與角色", "模組、範圍與薪資授權", "可見畫面與可寫資料"], dependencies: ["登入與 Session", "資料遮罩", "稽核日誌"],
@@ -524,7 +526,9 @@ function moduleMatches(module) {
   if (state.district !== "all" && module.district !== state.district) return false;
   const query = state.query.trim().toLowerCase();
   if (!query) return true;
-  const text = [module.name, module.fn, module.kid, module.manager, module.roles.join(" "), module.dependencies.join(" "), module.files.join(" "), module.apis.join(" "), ...module.features.flatMap((item) => [item.name, item.kid, item.manager, item.api, ...item.files])].join(" ").toLowerCase();
+  const manual = MANUAL[module.id] || {};
+  const manualText = [manual.where, manual.who, manual.intro, ...Object.values(manual.features || {}).flatMap((item) => [...(item.steps || []), ...(item.tips || [])])];
+  const text = [module.name, module.fn, module.kid, module.manager, module.roles.join(" "), module.dependencies.join(" "), module.files.join(" "), module.apis.join(" "), ...module.features.flatMap((item) => [item.name, item.kid, item.manager, item.api, ...item.files]), ...manualText].filter(Boolean).join(" ").toLowerCase();
   return text.includes(query);
 }
 
@@ -594,6 +598,14 @@ function renderDetail(module) {
   }
   const district = districtOf(module.district);
   const commit = latestCommitForFiles(module.files, module.commit);
+  const manualMode = state.mode === "manual";
+  const manual = MANUAL[module.id] || {};
+  const summary = manualMode && manual.intro ? manual.intro : copyOf(module);
+  const whereSection = !manualMode ? "" : `
+      <section class="detail-section"><h4>從哪裡進去</h4><div class="manual-where">
+        <div><b>位置：</b>${escapeHtml(manual.where || "尚未撰寫")}</div>
+        <div><b>誰可以操作：</b>${escapeHtml(manual.who || module.roles.join("、"))}</div>
+      </div></section>`;
   panel.style.setProperty("--district-soft", district.soft);
   panel.innerHTML = `
     <div class="detail-hero">
@@ -602,21 +614,40 @@ function renderDetail(module) {
         <span class="commit-pill${module.working ? " working" : ""}">${module.working ? "● 施工中" : `${commit.hash} · ${commit.short}`}</span>
       </div>
       <div class="detail-title"><span aria-hidden="true">${module.icon}</span><div><h3>${module.name}</h3><code>${module.fn}</code></div></div>
-      <p class="detail-summary">${escapeHtml(copyOf(module))}</p>
+      <p class="detail-summary">${escapeHtml(summary)}</p>
     </div>
     ${module.working ? `<div class="working-banner"><b>目前有尚未 Commit 的修改</b><br>最近已提交為 ${commit.hash}（${commit.date}）；施工中內容不能冒充正式 Commit 時間。</div>` : ""}
     <div class="detail-body">
-      <section class="detail-section"><h4>誰會使用</h4><div class="role-list">${module.roles.map((role) => `<span class="role-pill">${role}</span>`).join("")}</div></section>
-      <section class="detail-section"><h4>資料怎麼走</h4><div class="flow-mini"><span>${module.flow[0]}</span><span class="flow-arrow">→</span><span>${module.flow[1]}</span><span class="flow-arrow">→</span><span>${module.flow[2]}</span></div></section>
-      <section class="detail-section"><h4>裡面的功能房間</h4><div class="feature-list">${module.features.map((item, index) => featureMarkup(item, index)).join("")}</div></section>
+      ${manualMode ? whereSection : `<section class="detail-section"><h4>誰會使用</h4><div class="role-list">${module.roles.map((role) => `<span class="role-pill">${role}</span>`).join("")}</div></section>
+      <section class="detail-section"><h4>資料怎麼走</h4><div class="flow-mini"><span>${module.flow[0]}</span><span class="flow-arrow">→</span><span>${module.flow[1]}</span><span class="flow-arrow">→</span><span>${module.flow[2]}</span></div></section>`}
+      <section class="detail-section"><h4>${manualMode ? "逐項操作說明" : "裡面的功能房間"}</h4><div class="feature-list">${module.features.map((item, index) => featureMarkup(item, index, module)).join("")}</div></section>
       <section class="detail-section"><h4>會牽動哪些地方</h4><div class="dependency-list">${module.dependencies.map((name) => `<span class="dependency-pill">${name}</span>`).join("")}</div></section>
       <section class="detail-section engineer-only"><h4>程式與 API 證據</h4><div class="file-list">${module.files.map((file) => `<code>${file}</code>`).join("")}${module.apis.map((api) => `<code>${api}</code>`).join("")}${module.tests.map((test) => `<code>${test}</code>`).join("")}</div></section>
     </div>`;
 
 }
 
-function featureMarkup(item, index) {
+function manualMarkup(item, module) {
+  const entry = ((MANUAL[module.id] || {}).features || {})[item.name];
+  if (!entry || !Array.isArray(entry.steps) || !entry.steps.length) {
+    return `<p class="manual-missing">這一項的操作說明尚未撰寫。</p>`;
+  }
+  const tips = Array.isArray(entry.tips) && entry.tips.length
+    ? `<div class="manual-tips">${entry.tips.map((tip) => `<p>⚠ ${escapeHtml(tip)}</p>`).join("")}</div>`
+    : "";
+  return `<ol class="manual-steps">${entry.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join("")}</ol>${tips}`;
+}
+
+function featureMarkup(item, index, module) {
   const commit = latestCommitForFiles(item.files, item.commit);
+  if (state.mode === "manual" && module) {
+    return `<details class="feature-item">
+    <summary class="feature-button">
+      <span class="feature-row"><b>${item.name}</b></span>
+    </summary>
+    <div class="feature-detail">${manualMarkup(item, module)}</div>
+  </details>`;
+  }
   return `<details class="feature-item">
     <summary class="feature-button">
       <span class="feature-row"><b>${item.name}</b><time>${commit.working ? "尚未 Commit" : commit.short}</time></span>
@@ -684,18 +715,60 @@ function setPage(page) {
   });
 }
 
+// 只選模式切換列裡的按鈕。init() 會先在 <body> 上設 data-mode，原本用 [data-mode] 會連 body
+// 一起綁上點擊事件：頁面任何地方一點就整頁重繪，功能細項的 <details> 一展開就被換掉、
+// 永遠打不開（2026-10-07 實測：點擊後元素已不在 DOM、open=false）。
+const MODE_BUTTONS = ".mode-switch [data-mode]";
+
 function setMode(mode) {
   state.mode = mode;
   document.body.dataset.mode = mode;
-  document.querySelectorAll("[data-mode]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.mode === mode)));
+  document.querySelectorAll(MODE_BUTTONS).forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.mode === mode)));
   renderCity();
   renderJourney();
   renderArchitecture();
 }
 
+// 字體大小：存百分比而不是索引，日後增減檔位時舊設定不會錯位。
+// localStorage 在無痕視窗或被封鎖時會丟例外，一律包起來，讀不到就用預設值。
+const FONT_SCALES = [87.5, 100, 112.5, 125, 137.5, 150];
+const FONT_DEFAULT = 100;
+const FONT_STORAGE_KEY = "sg-system-map-font-scale";
+let fontScale = FONT_DEFAULT;
+
+function readFontScale() {
+  try {
+    const saved = Number(localStorage.getItem(FONT_STORAGE_KEY));
+    return FONT_SCALES.includes(saved) ? saved : FONT_DEFAULT;
+  } catch {
+    return FONT_DEFAULT;
+  }
+}
+
+function applyFontScale() {
+  document.documentElement.style.fontSize = `${fontScale}%`;
+  const index = FONT_SCALES.indexOf(fontScale);
+  byId("fontScaleValue").textContent = `${fontScale}%`;
+  document.querySelector('[data-font-step="-1"]').disabled = index <= 0;
+  document.querySelector('[data-font-step="1"]').disabled = index >= FONT_SCALES.length - 1;
+  document.querySelector('[data-font-step="0"]').setAttribute("aria-pressed", String(fontScale === FONT_DEFAULT));
+  try { localStorage.setItem(FONT_STORAGE_KEY, String(fontScale)); } catch {}
+}
+
+function stepFontScale(step) {
+  if (step === 0) {
+    fontScale = FONT_DEFAULT;
+  } else {
+    const index = FONT_SCALES.indexOf(fontScale);
+    fontScale = FONT_SCALES[Math.min(FONT_SCALES.length - 1, Math.max(0, index + step))];
+  }
+  applyFontScale();
+}
+
 function bindEvents() {
   document.querySelectorAll(".page-tab").forEach((button) => button.addEventListener("click", () => setPage(button.dataset.page)));
-  document.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => setMode(button.dataset.mode)));
+  document.querySelectorAll(MODE_BUTTONS).forEach((button) => button.addEventListener("click", () => setMode(button.dataset.mode)));
+  document.querySelectorAll("[data-font-step]").forEach((button) => button.addEventListener("click", () => stepFontScale(Number(button.dataset.fontStep))));
   byId("searchInput").addEventListener("input", (event) => {
     state.query = event.target.value;
     renderCity();
@@ -711,6 +784,8 @@ function bindEvents() {
 }
 
 function init() {
+  fontScale = readFontScale();
+  applyFontScale();
   document.body.dataset.mode = state.mode;
   renderSnapshot();
   renderMetrics();
