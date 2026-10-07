@@ -402,6 +402,77 @@ const TIMELINE_ITEMS = [
   { commit: COMMITS.initial, groups: ["platform", "self"], tags: ["系統初版", "PostgreSQL"], note: "建立可部署的員工打卡入口與持久化資料層。" }
 ];
 
+// 改動時間線改由 git 歷史自動產生（scripts/generate-system-map-commits.mjs 寫進 commit-data.js）。
+// 原本只讀上面寫死的 TIMELINE_ITEMS，每次發布都會重算 commit 時間，但時間線本身永遠停在
+// 最後一次有人手動編輯 app.js 的那天——網站看起來就是「不會每日更新」。
+// 自動資料刻意不含任何 commit 訊息文字（私有 repo 的 commit body 含員工編號與姓名），
+// 只有 type／scope 代號與檔案路徑；人工寫的說明仍以 TIMELINE_ITEMS 為準，同一個 hash 兩邊都有時
+// 採人工說明、自動時間。
+const KIND_LABEL = {
+  feat: "新增功能", fix: "修正", docs: "文件", ci: "CI／部署", chore: "維護", test: "測試",
+  refactor: "重構", perf: "效能", style: "樣式", build: "建置", revert: "還原", other: "其他變更"
+};
+// commit scope → 模組 id。public/index.html 與 server.js 幾乎被每個模組引用，用檔案歸類會把每筆
+// commit 都標成「全部功能」，所以以 scope 為主、專屬檔案為輔。沒列到的 scope 走檔案備援。
+const SCOPE_MODULES = {
+  auth: ["permissions"], perms: ["permissions"], security: ["permissions"],
+  punch: ["employeePunch"], portal: ["myProfile", "employeePunch"],
+  audit: ["audit"],
+  schedule: ["scheduleFlow"], "schedule-import": ["scheduleFlow"], "break-review": ["scheduleFlow"], attendance: ["scheduleFlow"],
+  payroll: ["payroll"], salary: ["salarySetup", "payroll"],
+  employees: ["employees"], roster: ["employees"], enrich: ["employees"],
+  compliance: ["reports"], stores: ["stores"], integrations: ["integrations"], insurance: ["insurance"]
+};
+const PLATFORM_SCOPES = new Set(["docs", "ci", "pages", "git", "scripts", "ui", "deps"]);
+
+function moduleFiles(module) {
+  return new Set([...module.files, ...module.features.flatMap((item) => item.files)]);
+}
+
+// 被超過一半模組引用的檔案沒有歸類價值（目前是 public/index.html 與 server.js）。
+const UBIQUITOUS_FILES = (() => {
+  const counts = {};
+  MODULES.forEach((module) => moduleFiles(module).forEach((file) => { counts[file] = (counts[file] || 0) + 1; }));
+  return new Set(Object.keys(counts).filter((file) => counts[file] > MODULES.length / 2));
+})();
+
+function areasForCommit(commit) {
+  let modules = [];
+  if (SCOPE_MODULES[commit.scope]) {
+    modules = SCOPE_MODULES[commit.scope].map(moduleOf).filter(Boolean);
+  } else if (!PLATFORM_SCOPES.has(commit.scope) && !["docs", "ci", "test", "build"].includes(commit.kind)) {
+    // 測試檔橫跨所有功能（例：test/regression.js 只因為某個功能的檔案清單有列到它，就會把
+    // 一筆排班修正誤標成「系統整合」），和 index.html 一樣不拿來歸類。寧可歸到共用底層，也不要歸錯。
+    // 用正規式而非帶引號的路徑字串：產生器會把 app.js 裡所有帶引號的路徑（連註解也算）都當成要追蹤的路徑。
+    const specific = (commit.files || []).filter((file) => !UBIQUITOUS_FILES.has(file) && !/^test\//.test(file));
+    modules = MODULES.filter((module) => specific.some((file) => moduleFiles(module).has(file)));
+  }
+  if (!modules.length) return { groups: ["platform"], tags: ["共用底層"] };
+  return {
+    groups: [...new Set(modules.map((module) => module.district))],
+    tags: modules.slice(0, 3).map((module) => module.name)
+  };
+}
+
+function buildTimeline() {
+  const curatedByHash = new Map(TIMELINE_ITEMS.map((item) => [item.commit.hash, item]));
+  const automatic = (AUTO_COMMIT_DATA.timeline || []).map((commit) => {
+    const curated = curatedByHash.get(commit.hash);
+    if (curated) return { ...curated, commit: { ...curated.commit, ...commit, summary: curated.commit.summary } };
+    const area = areasForCommit(commit);
+    return {
+      commit: { ...commit, summary: `${KIND_LABEL[commit.kind] || KIND_LABEL.other}${commit.scope ? ` · ${commit.scope}` : ""}` },
+      groups: area.groups,
+      tags: area.tags,
+      note: "自動產生：依 commit 類型與變動範圍歸類，功能說明待人工補充。",
+      automatic: true
+    };
+  });
+  const seen = new Set(automatic.map((item) => item.commit.hash));
+  const older = TIMELINE_ITEMS.filter((item) => !seen.has(item.commit.hash));
+  return [...automatic, ...older].sort((left, right) => String(right.commit.date).localeCompare(String(left.commit.date)));
+}
+
 const state = {
   page: "map",
   mode: "kid",
@@ -576,7 +647,7 @@ function renderJourney() {
 }
 
 function renderTimeline() {
-  const rows = TIMELINE_ITEMS.filter((item) => state.timelineFilter === "all" || item.groups.includes(state.timelineFilter));
+  const rows = buildTimeline().filter((item) => state.timelineFilter === "all" || item.groups.includes(state.timelineFilter));
   byId("timelineCount").textContent = `顯示 ${rows.length} 筆紀錄`;
   byId("timeline").innerHTML = rows.map((item) => {
     const [date, time] = item.commit.date.split(" ");

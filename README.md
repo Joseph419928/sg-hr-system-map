@@ -25,3 +25,11 @@
 3. 由公開 Repository 的 GitHub Pages 自動發布。
 
 功能說明是人工維護的系統盤點；Commit 時間由 Git 歷史自動產生。發布內容不包含員工資料、伺服器程式或環境密鑰。
+
+除了每次 push 到 `main`，發布流程也會在每日 08:00（台北）補跑一次，作為安全網；沒有新 Commit 時輸出完全相同，不會在公開 Repository 留下空轉的 Commit。
+
+### 改動時間線
+
+「改動時間線」分頁由 `commit-data.js` 的 `timeline` 自動產生（最近 40 筆非 merge 的 Commit），依 Commit 的 type／scope（例如 `feat(auth)`）歸到對應功能區。`app.js` 的 `TIMELINE_ITEMS` 若寫有同一個 hash 的人工說明，會優先顯示人工說明；沒有的會標示「功能說明待人工補充」。
+
+**發布資料不含任何 Commit 訊息文字。** 私有 Repository 的 Commit 內文含有員工編號與姓名，所以產生器只輸出 hash、時間、type／scope 代號，以及已經寫在 `app.js` 裡的檔案路徑，並在寫檔前逐欄位驗證；任何一欄不符就會中止，什麼都不會發布。要讓新功能出現有意義的說明，請在 `TIMELINE_ITEMS` 補一筆對應 hash 的人工說明。
