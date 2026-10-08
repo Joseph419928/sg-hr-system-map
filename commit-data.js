@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "954c542",
-    "date": "2026-10-07 20:01",
-    "short": "10/07 20:01",
-    "timestamp": 1791374497000
+    "hash": "a7c490a",
+    "date": "2026-10-08 08:53",
+    "short": "10/08 08:53",
+    "timestamp": 1791420803000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787899473000
     },
     "public/index.html": {
-      "hash": "517a58c",
-      "date": "2026-10-05 22:28",
-      "short": "10/05 22:28",
-      "timestamp": 1791210489000
+      "hash": "a7c490a",
+      "date": "2026-10-08 08:53",
+      "short": "10/08 08:53",
+      "timestamp": 1791420803000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -117,6 +117,17 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "a7c490a",
+      "date": "2026-10-08 08:53",
+      "short": "10/08 08:53",
+      "timestamp": 1791420803000,
+      "kind": "fix",
+      "scope": "audit",
+      "files": [
+        "public/index.html"
+      ]
+    },
     {
       "hash": "954c542",
       "date": "2026-10-07 20:01",
@@ -633,19 +644,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "ui",
       "files": [
         "public/index.html"
-      ]
-    },
-    {
-      "hash": "786ca17",
-      "date": "2026-08-14 23:34",
-      "short": "08/14 23:34",
-      "timestamp": 1786721684000,
-      "kind": "feat",
-      "scope": "compliance",
-      "files": [
-        "server.js",
-        "test/*",
-        "test/regression.js"
       ]
     }
   ]
