@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "ccf45da",
-    "date": "2026-10-23 16:29",
-    "short": "10/23 16:29",
-    "timestamp": 1792744175000
+    "hash": "27eea1b",
+    "date": "2026-10-23 16:35",
+    "short": "10/23 16:35",
+    "timestamp": 1792744517000
   },
   "files": {
     ".github/workflows": {
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1791210489000
     },
     "test/*": {
-      "hash": "ccf45da",
-      "date": "2026-10-23 16:29",
-      "short": "10/23 16:29",
-      "timestamp": 1792744175000
+      "hash": "27eea1b",
+      "date": "2026-10-23 16:35",
+      "short": "10/23 16:35",
+      "timestamp": 1792744517000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "ccf45da",
-      "date": "2026-10-23 16:29",
-      "short": "10/23 16:29",
-      "timestamp": 1792744175000
+      "hash": "27eea1b",
+      "date": "2026-10-23 16:35",
+      "short": "10/23 16:35",
+      "timestamp": 1792744517000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -117,6 +117,18 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "27eea1b",
+      "date": "2026-10-23 16:35",
+      "short": "10/23 16:35",
+      "timestamp": 1792744517000,
+      "kind": "fix",
+      "scope": "test",
+      "files": [
+        "test/*",
+        "test/regression.js"
+      ]
+    },
     {
       "hash": "ccf45da",
       "date": "2026-10-23 16:29",
@@ -614,24 +626,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "attendance",
       "files": [
         "public/index.html"
-      ]
-    },
-    {
-      "hash": "191eb20",
-      "date": "2026-08-18 18:13",
-      "short": "08/18 18:13",
-      "timestamp": 1787047999000,
-      "kind": "feat",
-      "scope": "attendance",
-      "files": [
-        "public/attendance-calc.js",
-        "public/index.html",
-        "public/schedule-import.js",
-        "server.js",
-        "test/*",
-        "test/attendance-calc.js",
-        "test/regression.js",
-        "test/schedule-import.js"
       ]
     }
   ]
