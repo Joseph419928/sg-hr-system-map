@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "c2c8327",
-    "date": "2026-10-23 22:47",
-    "short": "10/23 22:47",
-    "timestamp": 1792766844000
+    "hash": "b868f36",
+    "date": "2026-10-23 22:49",
+    "short": "10/23 22:49",
+    "timestamp": 1792766964000
   },
   "files": {
     ".github/workflows": {
@@ -117,6 +117,15 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "b868f36",
+      "date": "2026-10-23 22:49",
+      "short": "10/23 22:49",
+      "timestamp": 1792766964000,
+      "kind": "style",
+      "scope": "training",
+      "files": []
+    },
     {
       "hash": "c2c8327",
       "date": "2026-10-23 22:47",
@@ -598,19 +607,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "punch",
       "files": [
         "public/index.html"
-      ]
-    },
-    {
-      "hash": "94a89d0",
-      "date": "2026-08-19 20:17",
-      "short": "08/19 20:17",
-      "timestamp": 1787141868000,
-      "kind": "feat",
-      "scope": "schedule",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/regression.js"
       ]
     }
   ]
