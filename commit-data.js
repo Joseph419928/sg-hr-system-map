@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "b868f36",
-    "date": "2026-10-23 22:49",
-    "short": "10/23 22:49",
-    "timestamp": 1792766964000
+    "hash": "71a92a3",
+    "date": "2026-10-23 23:01",
+    "short": "10/23 23:01",
+    "timestamp": 1792767676000
   },
   "files": {
     ".github/workflows": {
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1791210489000
     },
     "test/*": {
-      "hash": "bb538c2",
-      "date": "2026-10-23 21:34",
-      "short": "10/23 21:34",
-      "timestamp": 1792762471000
+      "hash": "71a92a3",
+      "date": "2026-10-23 23:01",
+      "short": "10/23 23:01",
+      "timestamp": 1792767676000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -117,6 +117,17 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "71a92a3",
+      "date": "2026-10-23 23:01",
+      "short": "10/23 23:01",
+      "timestamp": 1792767676000,
+      "kind": "feat",
+      "scope": "training",
+      "files": [
+        "test/*"
+      ]
+    },
     {
       "hash": "b868f36",
       "date": "2026-10-23 22:49",
@@ -594,17 +605,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787146671000,
       "kind": "fix",
       "scope": "schedule",
-      "files": [
-        "public/index.html"
-      ]
-    },
-    {
-      "hash": "1cd2bc3",
-      "date": "2026-08-19 20:19",
-      "short": "08/19 20:19",
-      "timestamp": 1787141990000,
-      "kind": "fix",
-      "scope": "punch",
       "files": [
         "public/index.html"
       ]
