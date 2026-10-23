@@ -118,6 +118,15 @@ window.SYSTEM_MAP_COMMIT_DATA = {
   },
   "timeline": [
     {
+      "hash": "1e1aa8b",
+      "date": "2026-10-23 13:11",
+      "short": "10/23 13:11",
+      "timestamp": 1792732317000,
+      "kind": "chore",
+      "scope": "",
+      "files": []
+    },
+    {
       "hash": "61a3ee7",
       "date": "2026-10-22 08:42",
       "short": "10/22 08:42",
@@ -624,22 +633,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "files": [
         "public/index.html",
         "public/schedule-import.js",
-        "test/*",
-        "test/regression.js",
-        "test/schedule-import.js"
-      ]
-    },
-    {
-      "hash": "74d2b6d",
-      "date": "2026-08-15 16:52",
-      "short": "08/15 16:52",
-      "timestamp": 1786783959000,
-      "kind": "feat",
-      "scope": "schedule",
-      "files": [
-        "public/index.html",
-        "public/schedule-import.js",
-        "server.js",
         "test/*",
         "test/regression.js",
         "test/schedule-import.js"
