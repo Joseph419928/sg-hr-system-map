@@ -21,6 +21,10 @@
   --radius: 22px;
 }
 
+.workspace-links { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+.workspace-links a { display:inline-block; border:1px solid var(--line); border-radius:8px; padding:8px 12px; color:var(--brand); background:var(--panel); font-size:.85rem; text-decoration:none; }
+.workspace-links a:hover { background:var(--brand-soft); }
+
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }

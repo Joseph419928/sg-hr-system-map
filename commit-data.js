@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "bb538c2",
-    "date": "2026-10-23 21:34",
-    "short": "10/23 21:34",
-    "timestamp": 1792762471000
+    "hash": "57e1a23",
+    "date": "2026-10-23 22:38",
+    "short": "10/23 22:38",
+    "timestamp": 1792766327000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "bb538c2",
-      "date": "2026-10-23 21:34",
-      "short": "10/23 21:34",
-      "timestamp": 1792762471000
+      "hash": "57e1a23",
+      "date": "2026-10-23 22:38",
+      "short": "10/23 22:38",
+      "timestamp": 1792766327000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786091619000
     },
     "server.js": {
-      "hash": "ccf45da",
-      "date": "2026-10-23 16:29",
-      "short": "10/23 16:29",
-      "timestamp": 1792744175000
+      "hash": "57e1a23",
+      "date": "2026-10-23 22:38",
+      "short": "10/23 22:38",
+      "timestamp": 1792766327000
     },
     "store.js": {
       "hash": "517a58c",
@@ -117,6 +117,18 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "57e1a23",
+      "date": "2026-10-23 22:38",
+      "short": "10/23 22:38",
+      "timestamp": 1792766327000,
+      "kind": "feat",
+      "scope": "learning",
+      "files": [
+        "public/index.html",
+        "server.js"
+      ]
+    },
     {
       "hash": "bb538c2",
       "date": "2026-10-23 21:34",
@@ -601,21 +613,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "schedule",
       "files": [
         "public/index.html"
-      ]
-    },
-    {
-      "hash": "c449d0f",
-      "date": "2026-08-19 19:29",
-      "short": "08/19 19:29",
-      "timestamp": 1787138940000,
-      "kind": "fix",
-      "scope": "",
-      "files": [
-        "public/attendance-calc.js",
-        "server.js",
-        "test/*",
-        "test/attendance-calc.js",
-        "test/regression.js"
       ]
     }
   ]

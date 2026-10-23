@@ -276,17 +276,17 @@ const MODULES = [
     ]
   },
   {
-    id: "permissions", district: "admin", name: "帳號與稽核", icon: "🔑", fn: "viewPermissions()",
+    id: "permissions", district: "admin", name: "帳號權限管理", icon: "🔑", fn: "viewPermissions()",
     kid: "每把鑰匙只能開允許的門。",
-    manager: "管理帳號、模組矩陣、門店範圍、薪資檢視與編輯、密碼及封存 PIN。",
+    manager: "由帳號詳細管理模組、門店範圍、薪資檢視、四項 HR 授權、密碼及封存 PIN。",
     roles: ["系統管理員", "負責人"], flow: ["帳號與角色", "模組、範圍與薪資授權", "可見畫面與可寫資料"], dependencies: ["登入與 Session", "資料遮罩", "稽核日誌"],
     files: ["public/index.html", "server.js"], apis: ["POST /api/users*", "POST /api/system-pin"], tests: ["test/regression.js", "test/security-bootstrap.js"], commit: COMMITS.auditQuery,
     features: [
       feature("帳號清單", "查看每把鑰匙屬於誰，普通門禁卡平常先收起來。", "預設隱藏一般員工帳號，只顯示管理帳號與管理職。", COMMITS.punchSchedule, "public/index.html"),
       feature("模組權限矩陣", "勾選這把鑰匙可以開哪些房間。", "依帳號配置 dash、employees、scheduleFlow、salarySetup 等模組。", COMMITS.permissionScope, ["public/index.html", "server.js"]),
       feature("資料與門店範圍", "老師只能看自己負責的班級。", "以角色、品牌、門店與 viewStores 裁切人員資料。", COMMITS.employeeScope, ["public/index.html", "server.js"]),
-      feature("薪資檢視與編輯授權", "看得到和改得到是兩把不同鑰匙。", "salaryView 與 salaryEdit 分開授權，範圍仍受門店限制。", COMMITS.permissionScope, ["public/index.html", "server.js"]),
-      feature("密碼與首次改密", "新鑰匙第一次用，一定要換成自己的密碼。", "PBKDF2 雜湊、隨機正式密碼、首登改密與到期限制。", COMMITS.security, ["server.js", "test/security-bootstrap.js"]),
+      feature("薪資檢視與 HR 細分授權", "看得到、改得到、印得出是不同鑰匙。", "薪資檢視與人事異動、製薪、薪資單、全域薪資四項 HR 能力分開管理。", COMMITS.permissionScope, ["public/index.html", "server.js"]),
+      feature("密碼與首次改密", "新鑰匙第一次用，一定要換成自己的密碼。", "密碼雜湊、首登驗證、改密與到期限制。", COMMITS.security, ["server.js", "test/security-bootstrap.js"]),
       feature("封存 PIN", "重要資料櫃還要再輸入一組密碼。", "設定、驗證與限速封存 PIN。", COMMITS.security, ["public/index.html", "server.js"])
     ]
   },
@@ -486,6 +486,8 @@ const state = {
 };
 
 const byId = (id) => document.getElementById(id);
+// 同網域整合版使用本機／目前網域；GitHub Pages 版仍連回 Railway 正式入口。
+const WORKSPACE_ORIGIN = typeof location !== 'undefined' && location.pathname.startsWith('/system-map/') ? location.origin : 'https://sg-hr-system-production.up.railway.app';
 const districtOf = (id) => DISTRICTS.find((district) => district.id === id);
 const moduleOf = (id) => MODULES.find((module) => module.id === id);
 const copyOf = (item) => state.mode === "kid" ? item.kid : item.manager;
@@ -618,6 +620,7 @@ function renderDetail(module) {
     </div>
     ${module.working ? `<div class="working-banner"><b>目前有尚未 Commit 的修改</b><br>最近已提交為 ${commit.hash}（${commit.date}）；施工中內容不能冒充正式 Commit 時間。</div>` : ""}
     <div class="detail-body">
+      <nav class="workspace-links" aria-label="此功能的學習入口"><a href="${WORKSPACE_ORIGIN}/training.html?module=${encodeURIComponent(module.id)}" target="_blank" rel="noopener">學習此功能 ↗</a></nav>
       ${manualMode ? whereSection : `<section class="detail-section"><h4>誰會使用</h4><div class="role-list">${module.roles.map((role) => `<span class="role-pill">${role}</span>`).join("")}</div></section>
       <section class="detail-section"><h4>資料怎麼走</h4><div class="flow-mini"><span>${module.flow[0]}</span><span class="flow-arrow">→</span><span>${module.flow[1]}</span><span class="flow-arrow">→</span><span>${module.flow[2]}</span></div></section>`}
       <section class="detail-section"><h4>${manualMode ? "逐項操作說明" : "裡面的功能房間"}</h4><div class="feature-list">${module.features.map((item, index) => featureMarkup(item, index, module)).join("")}</div></section>
@@ -784,9 +787,15 @@ function bindEvents() {
 }
 
 function init() {
+  const params = new URLSearchParams(location.search);
+  if (MODULES.some(module => module.id === params.get('module'))) state.selectedModule = params.get('module');
+  if (['kid', 'manager', 'engineer', 'manual'].includes(params.get('mode'))) state.mode = params.get('mode');
+  document.querySelector('[data-workspace-link="system"]').href = WORKSPACE_ORIGIN + '/';
+  document.querySelector('[data-workspace-link="learning"]').href = WORKSPACE_ORIGIN + '/training.html';
   fontScale = readFontScale();
   applyFontScale();
   document.body.dataset.mode = state.mode;
+  document.querySelectorAll(MODE_BUTTONS).forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === state.mode)));
   renderSnapshot();
   renderMetrics();
   populateDistrictFilter();
