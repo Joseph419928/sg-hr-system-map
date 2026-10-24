@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "71a92a3",
-    "date": "2026-10-23 23:01",
-    "short": "10/23 23:01",
-    "timestamp": 1792767676000
+    "hash": "72f6721",
+    "date": "2026-10-24 12:35",
+    "short": "10/24 12:35",
+    "timestamp": 1792816538000
   },
   "files": {
     ".github/workflows": {
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786091619000
     },
     "server.js": {
-      "hash": "57e1a23",
-      "date": "2026-10-23 22:38",
-      "short": "10/23 22:38",
-      "timestamp": 1792766327000
+      "hash": "72f6721",
+      "date": "2026-10-24 12:35",
+      "short": "10/24 12:35",
+      "timestamp": 1792816538000
     },
     "store.js": {
       "hash": "517a58c",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1791210489000
     },
     "test/*": {
-      "hash": "71a92a3",
-      "date": "2026-10-23 23:01",
-      "short": "10/23 23:01",
-      "timestamp": 1792767676000
+      "hash": "72f6721",
+      "date": "2026-10-24 12:35",
+      "short": "10/24 12:35",
+      "timestamp": 1792816538000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -117,6 +117,18 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "72f6721",
+      "date": "2026-10-24 12:35",
+      "short": "10/24 12:35",
+      "timestamp": 1792816538000,
+      "kind": "feat",
+      "scope": "training",
+      "files": [
+        "server.js",
+        "test/*"
+      ]
+    },
     {
       "hash": "71a92a3",
       "date": "2026-10-23 23:01",
@@ -594,17 +606,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787146737000,
       "kind": "fix",
       "scope": "punch",
-      "files": [
-        "public/index.html"
-      ]
-    },
-    {
-      "hash": "a746957",
-      "date": "2026-08-19 21:37",
-      "short": "08/19 21:37",
-      "timestamp": 1787146671000,
-      "kind": "fix",
-      "scope": "schedule",
       "files": [
         "public/index.html"
       ]
