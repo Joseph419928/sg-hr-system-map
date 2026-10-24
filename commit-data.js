@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "72f6721",
-    "date": "2026-10-24 12:35",
-    "short": "10/24 12:35",
-    "timestamp": 1792816538000
+    "hash": "0bc22cd",
+    "date": "2026-10-24 14:49",
+    "short": "10/24 14:49",
+    "timestamp": 1792824582000
   },
   "files": {
     ".github/workflows": {
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786091619000
     },
     "server.js": {
-      "hash": "72f6721",
-      "date": "2026-10-24 12:35",
-      "short": "10/24 12:35",
-      "timestamp": 1792816538000
+      "hash": "0bc22cd",
+      "date": "2026-10-24 14:49",
+      "short": "10/24 14:49",
+      "timestamp": 1792824582000
     },
     "store.js": {
       "hash": "517a58c",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1791210489000
     },
     "test/*": {
-      "hash": "72f6721",
-      "date": "2026-10-24 12:35",
-      "short": "10/24 12:35",
-      "timestamp": 1792816538000
+      "hash": "0bc22cd",
+      "date": "2026-10-24 14:49",
+      "short": "10/24 14:49",
+      "timestamp": 1792824582000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -117,6 +117,18 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "0bc22cd",
+      "date": "2026-10-24 14:49",
+      "short": "10/24 14:49",
+      "timestamp": 1792824582000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "server.js",
+        "test/*"
+      ]
+    },
     {
       "hash": "72f6721",
       "date": "2026-10-24 12:35",
@@ -597,17 +609,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "public/index.html",
         "test/*",
         "test/regression.js"
-      ]
-    },
-    {
-      "hash": "bc3bca2",
-      "date": "2026-08-19 21:38",
-      "short": "08/19 21:38",
-      "timestamp": 1787146737000,
-      "kind": "fix",
-      "scope": "punch",
-      "files": [
-        "public/index.html"
       ]
     }
   ]
