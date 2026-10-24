@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "0bc22cd",
-    "date": "2026-10-24 14:49",
-    "short": "10/24 14:49",
-    "timestamp": 1792824582000
+    "hash": "f03d580",
+    "date": "2026-10-24 23:23",
+    "short": "10/24 23:23",
+    "timestamp": 1792855405000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "57e1a23",
-      "date": "2026-10-23 22:38",
-      "short": "10/23 22:38",
-      "timestamp": 1792766327000
+      "hash": "5868743",
+      "date": "2026-10-24 14:30",
+      "short": "10/24 14:30",
+      "timestamp": 1792823408000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -44,34 +44,34 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786096775000
     },
     "scripts/restore-app-state.js": {
-      "hash": "a1f231d",
-      "date": "2026-08-06 23:08",
-      "short": "08/06 23:08",
-      "timestamp": 1786028938000
+      "hash": "bcd4f8f",
+      "date": "2026-10-24 23:19",
+      "short": "10/24 23:19",
+      "timestamp": 1792855191000
     },
     "scripts/roster-import-lib.js": {
-      "hash": "956db7c",
-      "date": "2026-08-07 16:33",
-      "short": "08/07 16:33",
-      "timestamp": 1786091619000
+      "hash": "fa37caf",
+      "date": "2026-10-24 10:47",
+      "short": "10/24 10:47",
+      "timestamp": 1792810032000
     },
     "server.js": {
-      "hash": "0bc22cd",
-      "date": "2026-10-24 14:49",
-      "short": "10/24 14:49",
-      "timestamp": 1792824582000
+      "hash": "f03d580",
+      "date": "2026-10-24 23:23",
+      "short": "10/24 23:23",
+      "timestamp": 1792855405000
     },
     "store.js": {
-      "hash": "517a58c",
-      "date": "2026-10-05 22:28",
-      "short": "10/05 22:28",
-      "timestamp": 1791210489000
+      "hash": "bcd4f8f",
+      "date": "2026-10-24 23:19",
+      "short": "10/24 23:19",
+      "timestamp": 1792855191000
     },
     "test/*": {
-      "hash": "0bc22cd",
-      "date": "2026-10-24 14:49",
-      "short": "10/24 14:49",
-      "timestamp": 1792824582000
+      "hash": "f03d580",
+      "date": "2026-10-24 23:23",
+      "short": "10/24 23:23",
+      "timestamp": 1792855405000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "0ef2888",
-      "date": "2026-10-23 21:04",
-      "short": "10/23 21:04",
-      "timestamp": 1792760695000
+      "hash": "fa37caf",
+      "date": "2026-10-24 10:47",
+      "short": "10/24 10:47",
+      "timestamp": 1792810032000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -118,6 +118,20 @@ window.SYSTEM_MAP_COMMIT_DATA = {
   },
   "timeline": [
     {
+      "hash": "bcd4f8f",
+      "date": "2026-10-24 23:19",
+      "short": "10/24 23:19",
+      "timestamp": 1792855191000,
+      "kind": "fix",
+      "scope": "identity",
+      "files": [
+        "scripts/restore-app-state.js",
+        "server.js",
+        "store.js",
+        "test/*"
+      ]
+    },
+    {
       "hash": "0bc22cd",
       "date": "2026-10-24 14:49",
       "short": "10/24 14:49",
@@ -126,6 +140,39 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "",
       "files": [
         "server.js",
+        "test/*"
+      ]
+    },
+    {
+      "hash": "7af5f4c",
+      "date": "2026-10-24 14:40",
+      "short": "10/24 14:40",
+      "timestamp": 1792824026000,
+      "kind": "docs",
+      "scope": "",
+      "files": []
+    },
+    {
+      "hash": "50f7dc4",
+      "date": "2026-10-24 14:30",
+      "short": "10/24 14:30",
+      "timestamp": 1792823438000,
+      "kind": "docs",
+      "scope": "",
+      "files": []
+    },
+    {
+      "hash": "5868743",
+      "date": "2026-10-24 14:30",
+      "short": "10/24 14:30",
+      "timestamp": 1792823408000,
+      "kind": "fix",
+      "scope": "identity",
+      "files": [
+        "public/index.html",
+        "scripts/restore-app-state.js",
+        "server.js",
+        "store.js",
         "test/*"
       ]
     },
@@ -139,6 +186,52 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "files": [
         "server.js",
         "test/*"
+      ]
+    },
+    {
+      "hash": "752be1a",
+      "date": "2026-10-24 12:31",
+      "short": "10/24 12:31",
+      "timestamp": 1792816310000,
+      "kind": "feat",
+      "scope": "training",
+      "files": [
+        "server.js",
+        "test/*"
+      ]
+    },
+    {
+      "hash": "53e01cb",
+      "date": "2026-10-24 10:50",
+      "short": "10/24 10:50",
+      "timestamp": 1792810227000,
+      "kind": "docs",
+      "scope": "",
+      "files": []
+    },
+    {
+      "hash": "cc7ef12",
+      "date": "2026-10-24 10:48",
+      "short": "10/24 10:48",
+      "timestamp": 1792810095000,
+      "kind": "docs",
+      "scope": "",
+      "files": []
+    },
+    {
+      "hash": "fa37caf",
+      "date": "2026-10-24 10:47",
+      "short": "10/24 10:47",
+      "timestamp": 1792810032000,
+      "kind": "feat",
+      "scope": "identity",
+      "files": [
+        "public/index.html",
+        "scripts/roster-import-lib.js",
+        "server.js",
+        "store.js",
+        "test/*",
+        "test/regression.js"
       ]
     },
     {
@@ -494,121 +587,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "docs",
       "files": [
         ".github/workflows"
-      ]
-    },
-    {
-      "hash": "02f1a14",
-      "date": "2026-08-28 14:44",
-      "short": "08/28 14:44",
-      "timestamp": 1787899473000,
-      "kind": "fix",
-      "scope": "schedule",
-      "files": [
-        "public/attendance-calc.js",
-        "public/index.html",
-        "public/schedule-import.js",
-        "server.js",
-        "test/*",
-        "test/attendance-calc.js",
-        "test/regression.js",
-        "test/schedule-import.js"
-      ]
-    },
-    {
-      "hash": "ee648d8",
-      "date": "2026-08-28 11:20",
-      "short": "08/28 11:20",
-      "timestamp": 1787887236000,
-      "kind": "chore",
-      "scope": "break-review",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/break-review-legacy.js",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "a7e74c1",
-      "date": "2026-08-26 21:41",
-      "short": "08/26 21:41",
-      "timestamp": 1787751661000,
-      "kind": "fix",
-      "scope": "schedule-import",
-      "files": [
-        "public/schedule-import.js",
-        "test/*",
-        "test/schedule-import.js"
-      ]
-    },
-    {
-      "hash": "e960c3e",
-      "date": "2026-08-26 19:26",
-      "short": "08/26 19:26",
-      "timestamp": 1787743568000,
-      "kind": "feat",
-      "scope": "break-review",
-      "files": [
-        "public/attendance-calc.js",
-        "public/index.html",
-        "server.js",
-        "test/*",
-        "test/attendance-calc.js",
-        "test/break-review-legacy.js",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "5c8f144",
-      "date": "2026-08-20 11:31",
-      "short": "08/20 11:31",
-      "timestamp": 1787196670000,
-      "kind": "test",
-      "scope": "",
-      "files": [
-        "test/*",
-        "test/break-review-legacy.js",
-        "test/regression.js",
-        "test/security-bootstrap.js",
-        "test/seed-fixture.js"
-      ]
-    },
-    {
-      "hash": "668a7ec",
-      "date": "2026-08-20 11:10",
-      "short": "08/20 11:10",
-      "timestamp": 1787195405000,
-      "kind": "chore",
-      "scope": "ci",
-      "files": [
-        ".github/workflows"
-      ]
-    },
-    {
-      "hash": "aa70c03",
-      "date": "2026-08-20 10:53",
-      "short": "08/20 10:53",
-      "timestamp": 1787194410000,
-      "kind": "fix",
-      "scope": "punch",
-      "files": [
-        "public/index.html",
-        "server.js",
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "58adeb4",
-      "date": "2026-08-19 21:40",
-      "short": "08/19 21:40",
-      "timestamp": 1787146805000,
-      "kind": "fix",
-      "scope": "schedule",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/regression.js"
       ]
     }
   ]
