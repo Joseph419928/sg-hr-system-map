@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "55e3629",
-    "date": "2026-10-30 17:08",
-    "short": "10/30 17:08",
-    "timestamp": 1793351314000
+    "hash": "32cff2e",
+    "date": "2026-10-30 22:11",
+    "short": "10/30 22:11",
+    "timestamp": 1793369486000
   },
   "files": {
     ".github/workflows": {
@@ -117,6 +117,15 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "32cff2e",
+      "date": "2026-10-30 22:11",
+      "short": "10/30 22:11",
+      "timestamp": 1793369486000,
+      "kind": "docs",
+      "scope": "",
+      "files": []
+    },
     {
       "hash": "55e3629",
       "date": "2026-10-30 17:08",
@@ -580,17 +589,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "scope": "audit",
       "files": [
         "public/index.html"
-      ]
-    },
-    {
-      "hash": "954c542",
-      "date": "2026-10-07 20:01",
-      "short": "10/07 20:01",
-      "timestamp": 1791374497000,
-      "kind": "feat",
-      "scope": "docs",
-      "files": [
-        ".github/workflows"
       ]
     }
   ]
