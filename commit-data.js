@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "aa70dab",
-    "date": "2026-10-30 22:32",
-    "short": "10/30 22:32",
-    "timestamp": 1793370756000
+    "hash": "f24297e",
+    "date": "2026-10-31 14:37",
+    "short": "10/31 14:37",
+    "timestamp": 1793428625000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "aa70dab",
-      "date": "2026-10-30 22:32",
-      "short": "10/30 22:32",
-      "timestamp": 1793370756000
+      "hash": "f24297e",
+      "date": "2026-10-31 14:37",
+      "short": "10/31 14:37",
+      "timestamp": 1793428625000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792855191000
     },
     "test/*": {
-      "hash": "aa70dab",
-      "date": "2026-10-30 22:32",
-      "short": "10/30 22:32",
-      "timestamp": 1793370756000
+      "hash": "f24297e",
+      "date": "2026-10-31 14:37",
+      "short": "10/31 14:37",
+      "timestamp": 1793428625000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "aa70dab",
-      "date": "2026-10-30 22:32",
-      "short": "10/30 22:32",
-      "timestamp": 1793370756000
+      "hash": "f24297e",
+      "date": "2026-10-31 14:37",
+      "short": "10/31 14:37",
+      "timestamp": 1793428625000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -117,6 +117,19 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "f24297e",
+      "date": "2026-10-31 14:37",
+      "short": "10/31 14:37",
+      "timestamp": 1793428625000,
+      "kind": "feat",
+      "scope": "perm",
+      "files": [
+        "public/index.html",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
     {
       "hash": "aa70dab",
       "date": "2026-10-30 22:32",
@@ -579,19 +592,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "public/index.html",
         "server.js",
         "test/*"
-      ]
-    },
-    {
-      "hash": "6e62c96",
-      "date": "2026-10-08 10:24",
-      "short": "10/08 10:24",
-      "timestamp": 1791426254000,
-      "kind": "fix",
-      "scope": "payroll",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/regression.js"
       ]
     }
   ]
