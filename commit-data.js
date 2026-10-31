@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "f24297e",
-    "date": "2026-10-31 14:37",
-    "short": "10/31 14:37",
-    "timestamp": 1793428625000
+    "hash": "9c2e48b",
+    "date": "2026-10-31 20:13",
+    "short": "10/31 20:13",
+    "timestamp": 1793448829000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "f24297e",
-      "date": "2026-10-31 14:37",
-      "short": "10/31 14:37",
-      "timestamp": 1793428625000
+      "hash": "9c2e48b",
+      "date": "2026-10-31 20:13",
+      "short": "10/31 20:13",
+      "timestamp": 1793448829000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792810032000
     },
     "server.js": {
-      "hash": "aa70dab",
-      "date": "2026-10-30 22:32",
-      "short": "10/30 22:32",
-      "timestamp": 1793370756000
+      "hash": "9c2e48b",
+      "date": "2026-10-31 20:13",
+      "short": "10/31 20:13",
+      "timestamp": 1793448829000
     },
     "store.js": {
       "hash": "bcd4f8f",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792855191000
     },
     "test/*": {
-      "hash": "f24297e",
-      "date": "2026-10-31 14:37",
-      "short": "10/31 14:37",
-      "timestamp": 1793428625000
+      "hash": "9c2e48b",
+      "date": "2026-10-31 20:13",
+      "short": "10/31 20:13",
+      "timestamp": 1793448829000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "f24297e",
-      "date": "2026-10-31 14:37",
-      "short": "10/31 14:37",
-      "timestamp": 1793428625000
+      "hash": "9c2e48b",
+      "date": "2026-10-31 20:13",
+      "short": "10/31 20:13",
+      "timestamp": 1793448829000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -117,6 +117,20 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "9c2e48b",
+      "date": "2026-10-31 20:13",
+      "short": "10/31 20:13",
+      "timestamp": 1793448829000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
     {
       "hash": "f24297e",
       "date": "2026-10-31 14:37",
@@ -579,19 +593,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "test/*",
         "test/attendance-calc.js",
         "test/regression.js"
-      ]
-    },
-    {
-      "hash": "12f9883",
-      "date": "2026-10-22 08:41",
-      "short": "10/22 08:41",
-      "timestamp": 1792629714000,
-      "kind": "feat",
-      "scope": "payroll",
-      "files": [
-        "public/index.html",
-        "server.js",
-        "test/*"
       ]
     }
   ]
