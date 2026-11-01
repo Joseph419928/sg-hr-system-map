@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "a6d4c0f",
-    "date": "2026-11-01 14:38",
-    "short": "11/01 14:38",
-    "timestamp": 1793515118000
+    "hash": "aab506f",
+    "date": "2026-11-01 18:33",
+    "short": "11/01 18:33",
+    "timestamp": 1793529203000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "9c2e48b",
-      "date": "2026-10-31 20:13",
-      "short": "10/31 20:13",
-      "timestamp": 1793448829000
+      "hash": "84dba81",
+      "date": "2026-11-01 16:23",
+      "short": "11/01 16:23",
+      "timestamp": 1793521384000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -50,16 +50,16 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792855191000
     },
     "scripts/roster-import-lib.js": {
-      "hash": "fa37caf",
-      "date": "2026-10-24 10:47",
-      "short": "10/24 10:47",
-      "timestamp": 1792810032000
+      "hash": "80f1a82",
+      "date": "2026-11-01 16:13",
+      "short": "11/01 16:13",
+      "timestamp": 1793520821000
     },
     "server.js": {
-      "hash": "a6d4c0f",
-      "date": "2026-11-01 14:38",
-      "short": "11/01 14:38",
-      "timestamp": 1793515118000
+      "hash": "aab506f",
+      "date": "2026-11-01 18:33",
+      "short": "11/01 18:33",
+      "timestamp": 1793529203000
     },
     "store.js": {
       "hash": "39088cd",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793513175000
     },
     "test/*": {
-      "hash": "a6d4c0f",
-      "date": "2026-11-01 14:38",
-      "short": "11/01 14:38",
-      "timestamp": 1793515118000
+      "hash": "aab506f",
+      "date": "2026-11-01 18:33",
+      "short": "11/01 18:33",
+      "timestamp": 1793529203000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "9c2e48b",
-      "date": "2026-10-31 20:13",
-      "short": "10/31 20:13",
-      "timestamp": 1793448829000
+      "hash": "84dba81",
+      "date": "2026-11-01 16:23",
+      "short": "11/01 16:23",
+      "timestamp": 1793521384000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -118,6 +118,35 @@ window.SYSTEM_MAP_COMMIT_DATA = {
   },
   "timeline": [
     {
+      "hash": "84dba81",
+      "date": "2026-11-01 16:23",
+      "short": "11/01 16:23",
+      "timestamp": 1793521384000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
+      "hash": "80f1a82",
+      "date": "2026-11-01 16:13",
+      "short": "11/01 16:13",
+      "timestamp": 1793520821000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "scripts/roster-import-lib.js",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
       "hash": "a6d4c0f",
       "date": "2026-11-01 14:38",
       "short": "11/01 14:38",
@@ -128,6 +157,88 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "server.js",
         "test/*",
         "test/security-bootstrap.js"
+      ]
+    },
+    {
+      "hash": "cc9787a",
+      "date": "2026-11-01 14:28",
+      "short": "11/01 14:28",
+      "timestamp": 1793514522000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
+      "hash": "5ce9b83",
+      "date": "2026-11-01 14:22",
+      "short": "11/01 14:22",
+      "timestamp": 1793514164000,
+      "kind": "feat",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
+      "hash": "410cd53",
+      "date": "2026-11-01 14:14",
+      "short": "11/01 14:14",
+      "timestamp": 1793513665000,
+      "kind": "feat",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "test/*"
+      ]
+    },
+    {
+      "hash": "2d447f3",
+      "date": "2026-11-01 14:13",
+      "short": "11/01 14:13",
+      "timestamp": 1793513639000,
+      "kind": "feat",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
+      "hash": "d2668c4",
+      "date": "2026-11-01 14:12",
+      "short": "11/01 14:12",
+      "timestamp": 1793513550000,
+      "kind": "feat",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
+    {
+      "hash": "f22f849",
+      "date": "2026-11-01 14:11",
+      "short": "11/01 14:11",
+      "timestamp": 1793513513000,
+      "kind": "feat",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "scripts/roster-import-lib.js",
+        "server.js",
+        "test/*",
+        "test/regression.js"
       ]
     },
     {
@@ -503,99 +614,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "public/index.html",
         "test/*"
       ]
-    },
-    {
-      "hash": "0ef2888",
-      "date": "2026-10-23 21:04",
-      "short": "10/23 21:04",
-      "timestamp": 1792760695000,
-      "kind": "feat",
-      "scope": "permissions",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "bd537a4",
-      "date": "2026-10-23 19:40",
-      "short": "10/23 19:40",
-      "timestamp": 1792755603000,
-      "kind": "fix",
-      "scope": "ui",
-      "files": [
-        "public/index.html",
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "345a441",
-      "date": "2026-10-23 16:50",
-      "short": "10/23 16:50",
-      "timestamp": 1792745445000,
-      "kind": "docs",
-      "scope": "railway",
-      "files": []
-    },
-    {
-      "hash": "1b03986",
-      "date": "2026-10-23 16:48",
-      "short": "10/23 16:48",
-      "timestamp": 1792745283000,
-      "kind": "docs",
-      "scope": "railway",
-      "files": []
-    },
-    {
-      "hash": "27eea1b",
-      "date": "2026-10-23 16:35",
-      "short": "10/23 16:35",
-      "timestamp": 1792744517000,
-      "kind": "fix",
-      "scope": "test",
-      "files": [
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "ccf45da",
-      "date": "2026-10-23 16:29",
-      "short": "10/23 16:29",
-      "timestamp": 1792744175000,
-      "kind": "fix",
-      "scope": "",
-      "files": [
-        "public/index.html",
-        "server.js",
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "e5d311c",
-      "date": "2026-10-23 15:40",
-      "short": "10/23 15:40",
-      "timestamp": 1792741232000,
-      "kind": "other",
-      "scope": "",
-      "files": [
-        "public/index.html",
-        "server.js",
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "1e1aa8b",
-      "date": "2026-10-23 13:11",
-      "short": "10/23 13:11",
-      "timestamp": 1792732317000,
-      "kind": "chore",
-      "scope": "",
-      "files": []
     }
   ]
 };
