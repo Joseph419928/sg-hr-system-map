@@ -1,17 +1,17 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "e06fde7",
-    "date": "2026-11-02 18:06",
-    "short": "11/02 18:06",
-    "timestamp": 1793613983000
+    "hash": "5a0fbfd",
+    "date": "2026-11-02 21:07",
+    "short": "11/02 21:07",
+    "timestamp": 1793624829000
   },
   "files": {
     ".github/workflows": {
-      "hash": "954c542",
-      "date": "2026-10-07 20:01",
-      "short": "10/07 20:01",
-      "timestamp": 1791374497000
+      "hash": "5a0fbfd",
+      "date": "2026-11-02 21:07",
+      "short": "11/02 21:07",
+      "timestamp": 1793624829000
     },
     "DEPLOY.md": {
       "hash": "9c679e0",
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793520821000
     },
     "server.js": {
-      "hash": "e06fde7",
-      "date": "2026-11-02 18:06",
-      "short": "11/02 18:06",
-      "timestamp": 1793613983000
+      "hash": "5a0fbfd",
+      "date": "2026-11-02 21:07",
+      "short": "11/02 21:07",
+      "timestamp": 1793624829000
     },
     "store.js": {
       "hash": "5101769",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793583035000
     },
     "test/*": {
-      "hash": "e06fde7",
-      "date": "2026-11-02 18:06",
-      "short": "11/02 18:06",
-      "timestamp": 1793613983000
+      "hash": "5a0fbfd",
+      "date": "2026-11-02 21:07",
+      "short": "11/02 21:07",
+      "timestamp": 1793624829000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -117,6 +117,19 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "5a0fbfd",
+      "date": "2026-11-02 21:07",
+      "short": "11/02 21:07",
+      "timestamp": 1793624829000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        ".github/workflows",
+        "server.js",
+        "test/*"
+      ]
+    },
     {
       "hash": "a2b91ad",
       "date": "2026-11-02 18:04",
@@ -616,18 +629,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "scripts/restore-app-state.js",
         "server.js",
         "store.js",
-        "test/*"
-      ]
-    },
-    {
-      "hash": "72f6721",
-      "date": "2026-10-24 12:35",
-      "short": "10/24 12:35",
-      "timestamp": 1792816538000,
-      "kind": "feat",
-      "scope": "training",
-      "files": [
-        "server.js",
         "test/*"
       ]
     }
