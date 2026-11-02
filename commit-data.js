@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "5101769",
-    "date": "2026-11-02 09:30",
-    "short": "11/02 09:30",
-    "timestamp": 1793583035000
+    "hash": "be13c44",
+    "date": "2026-11-02 17:31",
+    "short": "11/02 17:31",
+    "timestamp": 1793611905000
   },
   "files": {
     ".github/workflows": {
@@ -26,10 +26,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1792629714000
     },
     "public/index.html": {
-      "hash": "5101769",
-      "date": "2026-11-02 09:30",
-      "short": "11/02 09:30",
-      "timestamp": 1793583035000
+      "hash": "be13c44",
+      "date": "2026-11-02 17:31",
+      "short": "11/02 17:31",
+      "timestamp": 1793611905000
     },
     "public/schedule-import.js": {
       "hash": "02f1a14",
@@ -56,10 +56,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793520821000
     },
     "server.js": {
-      "hash": "5101769",
-      "date": "2026-11-02 09:30",
-      "short": "11/02 09:30",
-      "timestamp": 1793583035000
+      "hash": "be13c44",
+      "date": "2026-11-02 17:31",
+      "short": "11/02 17:31",
+      "timestamp": 1793611905000
     },
     "store.js": {
       "hash": "5101769",
@@ -68,10 +68,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793583035000
     },
     "test/*": {
-      "hash": "5101769",
-      "date": "2026-11-02 09:30",
-      "short": "11/02 09:30",
-      "timestamp": 1793583035000
+      "hash": "be13c44",
+      "date": "2026-11-02 17:31",
+      "short": "11/02 17:31",
+      "timestamp": 1793611905000
     },
     "test/attendance-calc.js": {
       "hash": "efbf8bd",
@@ -92,10 +92,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1787048000000
     },
     "test/regression.js": {
-      "hash": "53f3ae9",
-      "date": "2026-11-01 20:21",
-      "short": "11/01 20:21",
-      "timestamp": 1793535719000
+      "hash": "be13c44",
+      "date": "2026-11-02 17:31",
+      "short": "11/02 17:31",
+      "timestamp": 1793611905000
     },
     "test/schedule-import.js": {
       "hash": "02f1a14",
@@ -117,6 +117,20 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "be13c44",
+      "date": "2026-11-02 17:31",
+      "short": "11/02 17:31",
+      "timestamp": 1793611905000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "public/index.html",
+        "server.js",
+        "test/*",
+        "test/regression.js"
+      ]
+    },
     {
       "hash": "5101769",
       "date": "2026-11-02 09:30",
@@ -615,15 +629,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
         "server.js",
         "test/*"
       ]
-    },
-    {
-      "hash": "53e01cb",
-      "date": "2026-10-24 10:50",
-      "short": "10/24 10:50",
-      "timestamp": 1792810227000,
-      "kind": "docs",
-      "scope": "",
-      "files": []
     }
   ]
 };
