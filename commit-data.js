@@ -1,10 +1,10 @@
 // 此檔案由 scripts/generate-system-map-commits.mjs 自動產生，請勿手動編輯。
 window.SYSTEM_MAP_COMMIT_DATA = {
   "latestRepositoryCommit": {
-    "hash": "32f11d5",
-    "date": "2026-11-03 23:11",
-    "short": "11/03 23:11",
-    "timestamp": 1793718718000
+    "hash": "96c7b7f",
+    "date": "2026-11-04 11:19",
+    "short": "11/04 11:19",
+    "timestamp": 1793762359000
   },
   "files": {
     ".github/workflows": {
@@ -20,10 +20,10 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1786762829000
     },
     "public/attendance-calc.js": {
-      "hash": "32f11d5",
-      "date": "2026-11-03 23:11",
-      "short": "11/03 23:11",
-      "timestamp": 1793718718000
+      "hash": "96c7b7f",
+      "date": "2026-11-04 11:19",
+      "short": "11/04 11:19",
+      "timestamp": 1793762359000
     },
     "public/index.html": {
       "hash": "b84e81a",
@@ -68,16 +68,16 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "timestamp": 1793583035000
     },
     "test/*": {
-      "hash": "32f11d5",
-      "date": "2026-11-03 23:11",
-      "short": "11/03 23:11",
-      "timestamp": 1793718718000
+      "hash": "96c7b7f",
+      "date": "2026-11-04 11:19",
+      "short": "11/04 11:19",
+      "timestamp": 1793762359000
     },
     "test/attendance-calc.js": {
-      "hash": "32f11d5",
-      "date": "2026-11-03 23:11",
-      "short": "11/03 23:11",
-      "timestamp": 1793718718000
+      "hash": "96c7b7f",
+      "date": "2026-11-04 11:19",
+      "short": "11/04 11:19",
+      "timestamp": 1793762359000
     },
     "test/break-review-legacy.js": {
       "hash": "15bb575",
@@ -117,6 +117,19 @@ window.SYSTEM_MAP_COMMIT_DATA = {
     }
   },
   "timeline": [
+    {
+      "hash": "96c7b7f",
+      "date": "2026-11-04 11:19",
+      "short": "11/04 11:19",
+      "timestamp": 1793762359000,
+      "kind": "fix",
+      "scope": "",
+      "files": [
+        "public/attendance-calc.js",
+        "test/*",
+        "test/attendance-calc.js"
+      ]
+    },
     {
       "hash": "32f11d5",
       "date": "2026-11-03 23:11",
@@ -628,20 +641,6 @@ window.SYSTEM_MAP_COMMIT_DATA = {
       "kind": "test",
       "scope": "",
       "files": [
-        "test/*",
-        "test/regression.js"
-      ]
-    },
-    {
-      "hash": "8f3e5a1",
-      "date": "2026-10-27 16:05",
-      "short": "10/27 16:05",
-      "timestamp": 1793088334000,
-      "kind": "other",
-      "scope": "",
-      "files": [
-        "public/index.html",
-        "server.js",
         "test/*",
         "test/regression.js"
       ]
